@@ -6,3 +6,6 @@ First, a few notes about this project:
 - Due to the nature of Conway's Game of Life, there is a high liklihood it reveals nothing even when it's fully complete. 
 - As far as I'm aware, this hasn't been done before. If it has, my approach will be unique.
 
+# Class Diagram
+
+Coming Soon
