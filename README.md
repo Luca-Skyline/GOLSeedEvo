@@ -9,3 +9,8 @@ First, a few notes about this project:
 # Class Diagram
 
 ![Class Diagram](https://github.com/Luca-Skyline/GOLSeedEvo/blob/09a0788a950148ace86985fa7c4a3c374026512c/imgs/GOL%20Class%20Diagram.png)
+
+
+# Mockup
+Example (Gosper's Glider Gun):
+![Seed](https://github.com/Luca-Skyline/GOLSeedEvo/blob/5a95628deee0261f5b70e11dbdc0a911b16b8705/imgs/Gospers_glider_gun.gif)
