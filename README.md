@@ -22,4 +22,3 @@ Example Seed (Gosper's Glider Gun):
 - i/o
 - enhanced for loop :)
 - recursion?
-- 
