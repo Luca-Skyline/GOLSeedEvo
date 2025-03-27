@@ -14,3 +14,12 @@ First, a few notes about this project:
 # Mockup
 Example Seed (Gosper's Glider Gun):
 ![Seed](https://github.com/Luca-Skyline/GOLSeedEvo/blob/5a95628deee0261f5b70e11dbdc0a911b16b8705/imgs/Gospers_glider_gun.gif)
+
+
+# Year-Two Concepts:
+- inheritance
+- multidimensional arrays
+- i/o
+- enhanced for loop :)
+- recursion?
+- 
