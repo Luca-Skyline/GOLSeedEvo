@@ -1,4 +1,12 @@
 # GOLSeedEvo
+
+# Instructions
+- Download Zip of repository
+- Open the src/Main/Main.pde file in Processing
+- Run
+
+# Overview
+
 An OOP program that uses a custom evolutionary algorithm in hopes of discovering new fascinating seeds for [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
 First, a few notes about this project:
