@@ -1,13 +1,18 @@
 class Seed extends State{
   
-  State[] states;
+  private int lifetime;
   
   public Seed(boolean[][] position, int frameSize){
     super(position, frameSize);
-    states = new State[6];
   }
   
-  public void runToEnd(){
+  public int getLifetime(){
+    return lifetime;
+  }
+  
+  public void findLifetime(){
+    State[] states;
+    states = new State[6];
     int frames = 0;
     State s = this;
     while(true){
@@ -36,7 +41,6 @@ class Seed extends State{
       frames++;
     }
     
-    System.out.println(frames);
-
+    lifetime = frames;
   }
 }
