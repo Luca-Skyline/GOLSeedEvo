@@ -11,16 +11,13 @@ class Seed extends State{
     int frames = 0;
     State s = this;
     while(true){
-      s = s.nextState(); //next state
-      
       boolean shouldBreak = false;
       for(State test : states){ //compare to prior states
-        try{
-          if(s.getState() == test.getState()){
-            System.out.println("sldkjf");
+        if(test != null){
+          if(Arrays.deepEquals(s.getState(), test.getState())){
             shouldBreak = true;
           }
-        } catch(Exception e){}
+        }
       }
       if(shouldBreak){break;}
       
@@ -33,6 +30,8 @@ class Seed extends State{
         }
         states[5] = s;
       }
+      
+      s = s.nextState(); //next state
       
       frames++;
     }

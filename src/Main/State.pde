@@ -41,13 +41,7 @@ class State{
       //System.out.println();
       for(int j = 0; j  < frameSize; j++){
         //System.out.print(cells[i][j] + " ");
-        if(cells[i][j]){
-          fill(255);
-        }
-        else{
-          noFill();
-        }
-        //stroke(0);
+        fill(cells[i][j] ? 255 : 0);
         noStroke();
         rect(i*(width/frameSize), j*(height/frameSize), width/frameSize, width/frameSize);
       }

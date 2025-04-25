@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 int lastFrame;
 int frameLength = 50; //milliseconds
@@ -33,7 +34,7 @@ void draw(){
   background(0);
   //mySeed.display();
   //while(millis() < lastFrame + frameLength){}
-  //myState = myState.nextState();
+  //mySeed = mySeed.nextState();
   //lastFrame = millis();
   
 }  
