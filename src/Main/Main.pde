@@ -27,7 +27,8 @@ void setup(){
   
   mySeed = new Seed(startPos, 300);
   System.out.println("Here");
-  mySeed.runToEnd();
+  mySeed.findLifetime();
+  println(mySeed.getLifetime());
 }
 
 void draw(){  
