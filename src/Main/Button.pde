@@ -41,4 +41,8 @@ class Button {
   public boolean isHovered(){
     return on;
   }
+  
+  public void turnOff(){
+   on = false; 
+  }
 }

@@ -35,15 +35,17 @@ class State{
     return new State(newCells, frameSize);
   }
   
-  public void display(){
+  public void display(color col){
     
     for(int i = 0; i < frameSize; i++){
       //System.out.println();
       for(int j = 0; j  < frameSize; j++){
         //System.out.print(cells[i][j] + " ");
-        fill(cells[i][j] ? 255 : 0);
-        noStroke();
-        rect(i*(width/frameSize), j*(height/frameSize), width/frameSize, width/frameSize);
+        if(cells[i][j]){
+          fill(col);
+          noStroke();
+          rect(i*(width/frameSize), j*(height/frameSize), width/frameSize, width/frameSize);
+        }
       }
     }
   }

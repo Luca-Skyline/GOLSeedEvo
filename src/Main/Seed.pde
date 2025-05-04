@@ -30,7 +30,7 @@ class Seed extends State{
         states[frames] = s;
       }
       else{
-        for(int i = 0; i < 4; i++){
+        for(int i = 0; i < 5; i++){
           states[i] = states[i+1];
         }
         states[5] = s;
@@ -39,6 +39,11 @@ class Seed extends State{
       s = s.nextState(); //next state
       
       frames++;
+      
+      if(frames > 10000){
+        break;
+      }
+     
     }
     
     lifetime = frames;

@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 int lastFrame;
-int frameLength = 50; //milliseconds
+int frameLength = 20; //milliseconds
 ArrayList<Seed> allBestSeeds;
 
 Controller control;
@@ -21,11 +21,13 @@ void setup(){
   
   allBestSeeds = new ArrayList<Seed>();
   control = new Controller(startSeed);
+  
+  frameRate(600.0);
 }
 
 void draw(){  
   background(0);
-  control.display(allBestSeeds.size());
+  
   
   
   Seed temp = control.getSeed();
@@ -36,19 +38,27 @@ void draw(){
   if(temp != null){
     currentState = temp;
     lastFrame = millis();
+    frameLength = 2000/(temp.getLifetime());
   }
   
   if(currentState != null){
-    currentState.display();
+    currentState.display(color(255));
     
     if(millis() > lastFrame + frameLength){
       currentState = currentState.nextState();
+      lastFrame = millis();
     }
   }
+  
+  control.display(allBestSeeds);
   
 }  
 
 
 void mouseReleased(){
   control.detectButtonPressed();
+}
+
+void keyReleased(){
+  control.detectKeyPressed(key);
 }

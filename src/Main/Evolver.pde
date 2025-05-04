@@ -21,7 +21,13 @@ class Evolver{
   
   public void generateSeeds(){
     for(int i = 0; i < iterations; i++){
-      boolean[][] newSeed = originalSeed.getState();
+      boolean[][] newSeed = new boolean[frameSize][frameSize];
+      for(int j = 0; j < frameSize; j++){
+        for(int k = 0; k < frameSize; k++){
+          newSeed[j][k] = originalSeed.getState()[j][k];
+        }
+      }
+      
       ArrayList<Integer[]> existingPoints = new ArrayList<Integer[]>();
       for(int j = 0; j < frameSize; j++){
         for(int k = 0; k < frameSize; k++){
@@ -48,14 +54,14 @@ class Evolver{
     println("starting");
     mySeeds[0].findLifetime();
     for(int i = 1; i < iterations; i++){
-      println(i);
       mySeeds[i].findLifetime();
+      println(i + " - " + mySeeds[i].getLifetime());
       if(mySeeds[i].getLifetime() > mySeeds[bestIndex].getLifetime()){
-        print("now");
+        //print("now");
         bestIndex = i;
       }
       else if(mySeeds[i].getLifetime() < mySeeds[worstIndex].getLifetime()){
-        print("other now");
+        //print("other now");
         worstIndex = i;
       }
     }
@@ -71,8 +77,8 @@ class Evolver{
     return bestSeed;
   }
   
-  //public Seed worstSeed(){
-    
-  //}
+  public Seed worstSeed(){
+    return worstSeed;
+  }
   
 }
