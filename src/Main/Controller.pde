@@ -36,7 +36,7 @@ public class Controller{
     on = true;
     generateNewSeed = false;
     
-    showController = new Button(30, 30, 40, 40, "✓", 30);
+    showController = new Button(50, 30, 80, 40, "CTRL", 30);
     
     mutations = 100;
     
@@ -138,7 +138,7 @@ public class Controller{
         rect(105, 650, 420, 150);
         fill(200, 0, 0);
         textAlign(CENTER, CENTER);
-        text("Generation in progress. Depending on the\nnumber of mutations, this may take\na hot second. Please wait.", 320, 700);
+        text("Generation in progress. Depending on the\nnumber of mutations, this could take\nseveral minutes or more. Please wait.", 320, 700);
         generateNewSeed = true;  
       } else if(seeGenerations.isHovered()){
         showOlds = true;
