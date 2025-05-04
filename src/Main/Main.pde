@@ -2,8 +2,11 @@ import java.util.Arrays;
 
 int lastFrame;
 int frameLength = 50; //milliseconds
+ArrayList<Seed> allBestSeeds;
 
-Seed mySeed;
+Controller control;
+
+State currentState;
 
 void setup(){
   size(900, 900);
@@ -13,29 +16,39 @@ void setup(){
       startPos[i][j] = false;
     }
   }
-  //startPos[150][150] = true;
-  //startPos[151][150] = true;
-  //startPos[151][148] = true;
-  //startPos[153][149] = true;
-  //startPos[154][150] = true;
-  //startPos[155][150] = true;
-  //startPos[156][150] = true;
   startPos[150][150] = true;
-  startPos[151][150] = true;
-  startPos[149][150] = true;
-  lastFrame = millis();
+  Seed startSeed = new Seed(startPos, 300);
   
-  mySeed = new Seed(startPos, 300);
-  System.out.println("Here");
-  mySeed.findLifetime();
-  println(mySeed.getLifetime());
+  allBestSeeds = new ArrayList<Seed>();
+  control = new Controller(startSeed);
 }
 
 void draw(){  
   background(0);
-  //mySeed.display();
-  //while(millis() < lastFrame + frameLength){}
-  //mySeed = mySeed.nextState();
-  //lastFrame = millis();
+  control.display(allBestSeeds.size());
+  
+  
+  Seed temp = control.getSeed();
+  if(temp != null){
+    allBestSeeds.add(temp);    
+  }
+  temp = control.queueSeed();
+  if(temp != null){
+    currentState = temp;
+    lastFrame = millis();
+  }
+  
+  if(currentState != null){
+    currentState.display();
+    
+    if(millis() > lastFrame + frameLength){
+      currentState = currentState.nextState();
+    }
+  }
   
 }  
+
+
+void mouseReleased(){
+  control.detectButtonPressed();
+}

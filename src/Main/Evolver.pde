@@ -5,6 +5,9 @@ class Evolver{
   int[] results;
   int iterations;
   int frameSize;
+  
+  Seed bestSeed;
+  Seed worstSeed;
 
   public Evolver(Seed seed, int iterations, int frameSize){
     originalSeed = seed;
@@ -12,13 +15,15 @@ class Evolver{
     results = new int[iterations];
     this.iterations = iterations;
     this.frameSize = frameSize;
+    
+
   }
   
   public void generateSeeds(){
-    boolean[][] newSeed = originalSeed.getState();
     for(int i = 0; i < iterations; i++){
+      boolean[][] newSeed = originalSeed.getState();
       ArrayList<Integer[]> existingPoints = new ArrayList<Integer[]>();
-      for(int j = 0; i < frameSize; i++){
+      for(int j = 0; j < frameSize; j++){
         for(int k = 0; k < frameSize; k++){
           if(newSeed[j][k]){
             Integer[] temp = {j,k};
@@ -37,17 +42,37 @@ class Evolver{
       
       mySeeds[i] = new Seed(newSeed, frameSize);
     }
-  }
-  
-  public Seed bestSeed(){
+    
     int bestIndex = 0;
+    int worstIndex = 0;
+    println("starting");
+    mySeeds[0].findLifetime();
     for(int i = 1; i < iterations; i++){
+      println(i);
+      mySeeds[i].findLifetime();
       if(mySeeds[i].getLifetime() > mySeeds[bestIndex].getLifetime()){
+        print("now");
         bestIndex = i;
+      }
+      else if(mySeeds[i].getLifetime() < mySeeds[worstIndex].getLifetime()){
+        print("other now");
+        worstIndex = i;
       }
     }
     
-    return mySeeds[bestIndex];
+    println(bestIndex);
+    
+    bestSeed = mySeeds[bestIndex];
+    worstSeed = mySeeds[worstIndex];
+    
   }
+  
+  public Seed bestSeed(){
+    return bestSeed;
+  }
+  
+  //public Seed worstSeed(){
+    
+  //}
   
 }
