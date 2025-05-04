@@ -1,7 +1,5 @@
 # GOLSeedEvo
 
-# Instructions
-
 ## Run Instructions
 - Download Zip of repository
 - Open the src/Main/Main.pde file in Processing.pde
