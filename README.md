@@ -26,6 +26,8 @@ First, a few notes about this project:
 
 ![Class Diagram](https://github.com/Luca-Skyline/GOLSeedEvo/blob/09a0788a950148ace86985fa7c4a3c374026512c/imgs/GOL%20Class%20Diagram.png)
 
+# Mockup
+![Mockup](https://github.com/Luca-Skyline/GOLSeedEvo/blob/5686b16ca733872128d788541e2bc6a071ab7d24/imgs/mockup.png)
 
 # Year-Two Concepts:
 - inheritance
