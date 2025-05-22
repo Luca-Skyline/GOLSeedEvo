@@ -1,6 +1,6 @@
 class State{
-  private boolean[][] cells;
-  private int frameSize;
+  protected boolean[][] cells;
+  protected int frameSize;
   
   public State(boolean[][] position, int frameSize){
     cells = position;

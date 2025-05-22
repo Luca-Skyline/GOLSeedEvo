@@ -1,15 +1,15 @@
 public class Controller{
 
-  Button newGeneration;
-  Button seeGenerations;
-  Button setMutations;
-  Button playBest;
-  Button playWorst;
-  Button showController;
-  Button hideController;
-  Button backButton;
+  private Button newGeneration;
+  private Button seeGenerations;
+  private Button setMutations;
+  private Button playBest;
+  private Button playWorst;
+  private Button showController;
+  private Button hideController;
+  private Button backButton;
   
-  Evolver evo;
+  private Evolver evo;
   
   boolean on;
   boolean showOlds;

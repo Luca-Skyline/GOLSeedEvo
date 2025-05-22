@@ -1,13 +1,13 @@
 class Evolver{
   
-  Seed originalSeed;
-  Seed[] mySeeds;
-  int[] results;
-  int iterations;
-  int frameSize;
+  private Seed originalSeed;
+  private Seed[] mySeeds;
+  private int[] results;
+  private int iterations;
+  private int frameSize;
   
-  Seed bestSeed;
-  Seed worstSeed;
+  private Seed bestSeed;
+  private Seed worstSeed;
 
   public Evolver(Seed seed, int iterations, int frameSize){
     originalSeed = seed;

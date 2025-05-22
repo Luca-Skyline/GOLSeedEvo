@@ -1,11 +1,11 @@
 class Button {
   //Member Variable
-  int x, y, w, h;
-  color c1, c2;
-  String val;
-  boolean on;
+  private int x, y, w, h;
+  private color c1, c2;
+  private String val;
+  private boolean on;
 
-  float txtSize;
+  private float txtSize;
 
   Button(int x, int y, int w, int h, String val, float txtSize) {
     this.x = x - (w/2);
